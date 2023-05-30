@@ -80,3 +80,10 @@ A Stream Transform é feita justamente para isso, nela temos igual ao Writable, 
 
 💡 Lembrando: O dado do tem que ser em Buffer para realizar a leitura pelo stdout.
 
+## Introduzindo Streams no http
+
+Criei um servidor e coloquei a Stream Readable para ler o fake upload construido dentro por um Transform Stream, usando o metodo fetch no fake-upload.
+
+❗ TypeError: RequestInit: duplex option is required when sending a body
+
+✅ Agora na nova versão lts do Node é preciso adicionar no fetch o [duplex: 'half'](https://fetch.spec.whatwg.org/#dom-requestinit-duplex) é o único valor válido e é para iniciar uma busca half-duplex (ou seja, o agente do usuário envia toda a solicitação antes de processar a resposta).
