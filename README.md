@@ -60,4 +60,23 @@ Dentro destes 100s ele está lendo cada linha que sobe e fazendo inserções no 
 
 - STDIN E STDOUT
 
-STDIN é tudo que o usuário digita no terminal e é uma Readable Streams
+STDIN é tudo que o usuário digita no terminal e é uma Readable Streams, ele coleta/lê os dados enviados.
+
+STDOU ele é uma Writable Streams que retorna/escreve os dados.
+
+O pipe é utilizado para encaminhar para uma saída o que foi pego no stdin.
+
+Uma stream não lê dados simples como boleano, string, numbers, então é necessário converter em um Buffer, que não aceita dados em forma de número, apenas em string.
+
+Para o Writable utilizamos o _write com 3 parâmetros:
+
+1. Chunk: É o que foi lido pela function Readable, neste caso é o buf;
+2. Encoding: É a forma como essa informação foi decodificada;
+3. Callback: É uma função que a Writable precisa chamar quando terminou de fazer a ação com a informação do Chunk e Encoding;
+
+Uma Stream de escrita nunca transforma nada, apenas processa o dado.
+
+A Stream Transform é feita justamente para isso, nela temos igual ao Writable, um _transform com os três parâmetros, Chunk, Encoding e Callback, com isso o callback tem dois parâmetros, a reação esperada caso haja erro, e o dado para transformar.
+
+💡 Lembrando: O dado do tem que ser em Buffer para realizar a leitura pelo stdout.
+
