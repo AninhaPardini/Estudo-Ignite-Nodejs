@@ -1,3 +1,5 @@
+# BACK-END: Conceitos Básicos
+
 ## 💡 Principais Tópicos
 
 - Requerimento do http é a base para construi aplicações e APIs. 
@@ -38,3 +40,24 @@ São os códigos de status da requisição mostrando o que aconteceu com o que f
   - 201 => Criou ou Atualizou algo (POST/PUT)
 - Respostas de Client Error (300-399);
 - Respostas de Server erro (500-599); => Erro no back-end/banco de dados/API
+
+# NODEJS: Estudos e Conceitos
+
+## STREAMS
+
+As principais cases são de Writable Streams como Netflix e Spotify, o Streams trabalha em ler pequenas partes do conteúdo inteiro para ir entregando-as e fazendo as inserções lidas a cada bloco baixados.
+
+Outro caso de uso Readable Streams é importação de clientes via CSV (Excel) onde o cliente envia seu documento e é baixado aos poucos e lido cada bloco baixado em conjunto.
+
+Supondo que o usuário envia 1gb de arquivo.
+
+1gb -1.000.000
+10mb/s - 100s
+
+Dentro destes 100s ele está lendo cada linha que sobe e fazendo inserções no banco de dados.
+
+### Fundamentos
+
+- STDIN E STDOUT
+
+STDIN é tudo que o usuário digita no terminal e é uma Readable Streams
