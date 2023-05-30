@@ -15,7 +15,7 @@
 
 - Rotas podem ter nomes iguais mas com metodos diferentes. Exemplo: GET /users => Buscando um usuário
 
-## Requisições HTTP
+## Requisições HTTP (Metodos)
 
 - GET => Buscar um recurso do backend;
 - POST => Criar um recurso;
