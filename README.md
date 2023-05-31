@@ -130,3 +130,19 @@ Usando a função randomUUID dentro do modulo crypto e chamei a funçãp dentro 
 ### Separando as rotas
 
 Para deixar o código mais limpo e uma performace melhor na procura de rotas criei um arquivo para armazena-las como objeto, então tirei de dentro do server os imports chamados pelas rotas e adicionei ao arquivo de routes, depois armazenei uma variante para achar as rotas e coloquei uma regra de se o metodo da rota for igual ao metodo req, e o caminho da rota for igual a url ele irá retornar o dado do routes, depois adicionei o filtro que se hovuer router, retornar o handler com os parâmetros de requisição e resposta.
+
+### Route e Query parameters
+
+Existem 3 formas do frontend ou aplicação a enviar informação para nossa API
+
+1. Query parametres -> São parametros nomeados: http://localhost:3333/users?userId=1&name=Yanzinho -> Nele você busca de forma nomeada a informação que deseja, e usando & para concatenar.
+
+🔗 url Stateful
+💡 Importante: É uma forma mais utilizada para filtros, paginação. sistema de busca sem afetar dados sensiveis e não são informações obrigatórias
+
+2. Route Parametres -> São parametros não nomeados que também ficam na rota: http://localhost:3333/users/1(procurando com o metodo GET o usuário de Id 1) Geralmente são usados para identificação de recursos e também não pode ser usado para envio de informações sensíveis.
+3. Request Body -> Envio de informações de um formulário e são a forma mais segura de envio de dados sensíveis. Ele não aparece dados na url.
+
+## Edição e remoção de usuário
+
+Criei as rotas e agora irei começar a entender sobre com criar um regex dos parametros.

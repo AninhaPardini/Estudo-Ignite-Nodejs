@@ -18,7 +18,7 @@ export const routes = [
         method: 'POST',
         path: '/users',
         handler: (req, res) => {
-             const { name, email } = req.body
+            const { name, email } = req.body
 
             const user = {
                 id: randomUUID(),
@@ -32,5 +32,21 @@ export const routes = [
             .writeHead(201)
             .end('Criação de usuário');
         }
-    }
+    },
+    {
+        method: 'PUT',
+        path: '/users',
+        handler: (req, res) => {
+
+
+        }
+    },
+    {
+        method: 'DELETE',
+        path: '/users/',
+        handler: (req, res) => {
+            return res.end()
+
+        }
+    },
 ]
