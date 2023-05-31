@@ -143,10 +143,20 @@ Existem 3 formas do frontend ou aplicação a enviar informação para nossa API
 2. Route Parametres -> São parametros não nomeados que também ficam na rota: http://localhost:3333/users/1(procurando com o metodo GET o usuário de Id 1) Geralmente são usados para identificação de recursos e também não pode ser usado para envio de informações sensíveis.
 3. Request Body -> Envio de informações de um formulário e são a forma mais segura de envio de dados sensíveis. Ele não aparece dados na url.
 
-## Edição e remoção de usuário
+## Edição e remoção de usuário 
+
+### Configurando Regex
 
 Após criar as rotas agora irei começar a entender sobre com criar um regex dos parametros. Para começar um gerador dinamico das rotas, primeiramente vou definir que o parametro começara com ':'. Depois disso criei uma pasta para utils para construir o caminho da rota, e criei uma função onde filtra os caracteres aceitos atravéz de regex.
 
 💡 Importante: o '^' é usado para dizer em regex que o parametro começa com determinado dado, neste caso é o pathWithParams.
 
 🆔 Filtrando IDS: Para poder filtrar ids com regex e separa-los é usando o ?<$i> em conjunto com os critérios, neste regex utilizado fica assim: ```'(?<$i>[a-z0-9\-_]+)'```
+
+## Remoção de registros
+
+Criei um metodo no database de delete e coloquei os parametros de tabela e id, dentro dele fiz a busca pelo index desejado, buscando o index e verificando se é igual ao que foi requisitado.
+
+## Atualização de registros
+
+Corrigir não estar atualizando.
