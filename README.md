@@ -80,6 +80,11 @@ A Stream Transform é feita justamente para isso, nela temos igual ao Writable, 
 
 💡 Lembrando: O dado do tem que ser em Buffer para realizar a leitura pelo stdout.
 
+### Buffer
+
+É uma representação de um espaço na memória do computador(guarda os dados de forma binaria), usado para transitar dados de uma forma muito rápida, são feitos para serem tratados e removidos logo em seguida, dados temporários.
+
+
 ## Introduzindo Streams no http
 
 Criei um servidor e coloquei a Stream Readable para ler o fake upload construido dentro por um Transform Stream, usando o metodo fetch no fake-upload.
