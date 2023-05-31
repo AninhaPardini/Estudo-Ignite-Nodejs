@@ -87,3 +87,6 @@ Criei um servidor e coloquei a Stream Readable para ler o fake upload construido
 ❗ TypeError: RequestInit: duplex option is required when sending a body
 
 ✅ Agora na nova versão lts do Node é preciso adicionar no fetch o [duplex: 'half'](https://fetch.spec.whatwg.org/#dom-requestinit-duplex) é o único valor válido e é para iniciar uma busca half-duplex (ou seja, o agente do usuário envia toda a solicitação antes de processar a resposta).
+
+## Corpo da requisição em JSON
+
