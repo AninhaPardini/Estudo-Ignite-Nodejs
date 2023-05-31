@@ -111,3 +111,17 @@ Em select fiz uma variante que armazena se receber um objeto ele mostra, se não
 
 E no insert selecionei a tabela e a data que será colocada, se tiver um array dentro(dados de usuário) do database retorna pushando o data pra dentro do data selecionado, se não cria um novo array e retorna o item dentro.
 
+💡 Importante: transformar o database como inacessavel forá do escopo montado entre outros fluxos importantes para envio de dados, se utiliza o '#' na frente de todas as chamadas.
+
+### Persist
+
+Usando o fs para converter os dados em um arquivo, usei o metodo persist para escrever um arquivo e como parâmetro coloquei o nome dele e transformei o database em json.
+
+💡 Importante: O arquivo db é criado apartir do local que está se executando a aplicação, se der cd /src e executar o server ele irá criar dentro do src, caso cotrário irá para raiz.
+
+Para poder acessar os dados depois que o servidor estiver reiniciado e se não houver arquivo ele irá criar um vázio.
+
+## Criando UUID (id unico universal)
+
+Usando a função randomUUID dentro do modulo crypto e chamei a funçãp dentro do objeto de id do usuário.
+
