@@ -1,30 +1,17 @@
 import http from 'node:http'
+import { json } from './middlewares/json.js';
 
 const users = [];
 
 const server = http.createServer( async (req, res) => {
     const { method, url } = req
-    console.log(method, url)
-
-    const buffers = [];
-    // Percorre a Stream e enquanto não terminar nada abaixo é executado.
-    for await (const chunk of req) {
-        buffers.push(chunk)
-    }
-
-   try {
-     req.body = JSON.parse(Buffer.concat(buffers).toString())
-   } catch {
-    req.body = null
-   }
-
-    console.log(req.body)
+    console.log(method, url);
     
+    await json(req, res);
+
     if(method === 'GET' && url === '/users') {
         //Early return: nada abaixo é executado
-        return res
-        .setHeader('Content-type', 'application/json')
-        .end('Listagem de usuários:' + JSON.stringify(users));
+        return res.end('Listagem de usuários:' + JSON.stringify(users));
     }
 
     if(method === 'POST' && url === '/users') {

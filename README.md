@@ -98,3 +98,7 @@ Criei um servidor e coloquei a Stream Readable para ler o fake upload construido
 Para consumir a Stream por completo usei do metodo for com await para esperar os dados serem lidos por completo e armazenando na constante buffers.
 
 Como o documento armazenado no buffers era em uma formatação ilegivel para res, transformei-o em JSON usando parse e caso não tenha nada dentro do JSON ele retornará null. Então removi o usuário que estava como teste e adicionei o name e email desestruturado para responder o GET.
+
+## Middleware
+
+É um interceptador, uma função que irá receber sempre os parâmetros req e res e pode ter funções como lidar com os tipos de transformações, por exemplo o json que foi criado que pega tanto as respostas quanto as leituras em JSON.
