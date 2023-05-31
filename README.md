@@ -102,3 +102,12 @@ Como o documento armazenado no buffers era em uma formatação ilegivel para res
 ## Middleware
 
 É um interceptador, uma função que irá receber sempre os parâmetros req e res e pode ter funções como lidar com os tipos de transformações, por exemplo o json que foi criado que pega tanto as respostas quanto as leituras em JSON.
+
+## Banco de dados
+
+Criei um arquivo em src para fazer o filtro da database, selecionando a tabela e oq será inserido, neste caso vou ter uma data base como objeto users que dentro dele tem outro objeto com as datas dos usuários.
+
+Em select fiz uma variante que armazena se receber um objeto ele mostra, se não manda uma array vazia.
+
+E no insert selecionei a tabela e a data que será colocada, se tiver um array dentro(dados de usuário) do database retorna pushando o data pra dentro do data selecionado, se não cria um novo array e retorna o item dentro.
+
