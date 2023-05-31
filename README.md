@@ -125,3 +125,8 @@ Para poder acessar os dados depois que o servidor estiver reiniciado e se não h
 
 Usando a função randomUUID dentro do modulo crypto e chamei a funçãp dentro do objeto de id do usuário.
 
+## Rota da aplicação
+
+### Separando as rotas
+
+Para deixar o código mais limpo e uma performace melhor na procura de rotas criei um arquivo para armazena-las como objeto, então tirei de dentro do server os imports chamados pelas rotas e adicionei ao arquivo de routes, depois armazenei uma variante para achar as rotas e coloquei uma regra de se o metodo da rota for igual ao metodo req, e o caminho da rota for igual a url ele irá retornar o dado do routes, depois adicionei o filtro que se hovuer router, retornar o handler com os parâmetros de requisição e resposta.
