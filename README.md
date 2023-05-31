@@ -90,3 +90,6 @@ Criei um servidor e coloquei a Stream Readable para ler o fake upload construido
 
 ## Corpo da requisição em JSON
 
+Para consumir a Stream por completo usei do metodo for com await para esperar os dados serem lidos por completo e armazenando na constante buffers.
+
+Como o documento armazenado no buffers era em uma formatação ilegivel para res, transformei-o em JSON usando parse e caso não tenha nada dentro do JSON ele retornará null. Então removi o usuário que estava como teste e adicionei o name e email desestruturado para responder o GET.
