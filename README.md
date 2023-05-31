@@ -145,4 +145,8 @@ Existem 3 formas do frontend ou aplicação a enviar informação para nossa API
 
 ## Edição e remoção de usuário
 
-Criei as rotas e agora irei começar a entender sobre com criar um regex dos parametros.
+Após criar as rotas agora irei começar a entender sobre com criar um regex dos parametros. Para começar um gerador dinamico das rotas, primeiramente vou definir que o parametro começara com ':'. Depois disso criei uma pasta para utils para construir o caminho da rota, e criei uma função onde filtra os caracteres aceitos atravéz de regex.
+
+💡 Importante: o '^' é usado para dizer em regex que o parametro começa com determinado dado, neste caso é o pathWithParams.
+
+🆔 Filtrando IDS: Para poder filtrar ids com regex e separa-los é usando o ?<$i> em conjunto com os critérios, neste regex utilizado fica assim: ```'(?<$i>[a-z0-9\-_]+)'```
