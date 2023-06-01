@@ -160,3 +160,21 @@ Criei um metodo no database de delete e coloquei os parametros de tabela e id, d
 ## Atualização de registros
 
 Da mesma forma que fiz com o delete, criei uma rota que pusha além do id, o name e email, e então configurei a função update no data base para pegar o index e atualizar a table com o id e dados novos.
+
+## Capturando query parameters
+
+Em regex fiz uma alteração para ele pegar também os dados após o id de usuário, cortando com a '?' e criei uma função que corta e transforma essas querys em um objeto, com nome e valor, conseguindo assim um resultado:
+
+{ search: 'name', page: '2'}
+
+### Filtrando a lista do banco de dados
+
+No database adicionei o filter ao select caso os dados não estejam vazios, e haja search, ele irá retornar tornando o objeto uma array e reparando a chave do valor e dentro deste filtro, ele irá tanto buscar o value com letras maiusculas ou minusculas.
+
+Em routes, apenas adicionei a users, o parametro search onde ele verificara se está vazio, e se não estiver ele envia os dados procurados.
+
+| Object.entries() -> transforma um objeto em array
+| .some -> percorre o array e encontrar e se encontra true return que deve ser incluido no filter que criei.
+
+
+
