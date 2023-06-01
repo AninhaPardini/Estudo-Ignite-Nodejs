@@ -159,4 +159,4 @@ Criei um metodo no database de delete e coloquei os parametros de tabela e id, d
 
 ## Atualização de registros
 
-Corrigir não estar atualizando.
+Da mesma forma que fiz com o delete, criei uma rota que pusha além do id, o name e email, e então configurei a função update no data base para pegar o index e atualizar a table com o id e dados novos.
